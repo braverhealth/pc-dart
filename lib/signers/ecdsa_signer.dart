@@ -66,7 +66,7 @@ class ECDSASigner implements Signer {
         _random = null;
         pvparams = params as PrivateKeyParameter<PrivateKey>;
       } else {
-        _random = SecureRandom('Fortuna');
+        _random = SecureRandom('Fortuna')..seed(params);
         pvparams = params as PrivateKeyParameter<PrivateKey>;
       }
 
